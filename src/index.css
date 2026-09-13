@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+@theme {
+  --color-ink: #16231E;
+  --color-canvas: #FBF8F2;
+  --color-canvas-sunk: #F3EEE3;
+  --color-deep: #1F5C4B;
+  --color-deep-dark: #163F34;
+  --color-sage: #DCE8DE;
+  --color-sage-line: #C4D6C7;
+  --color-teal: #2E7D74;
+  --color-amber: #B4791F;
+  --color-amber-bg: #FBF0DC;
+  --color-red: #A83B26;
+  --color-red-bg: #F8E6E0;
+  --color-blue: #395A82;
+  --color-blue-bg: #E7EEF6;
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-deep);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: var(--color-sage-line); border-radius: 8px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

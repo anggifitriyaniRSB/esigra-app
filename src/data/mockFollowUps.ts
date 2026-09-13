@@ -1,0 +1,56 @@
+import type { FollowUp } from '../types/notification';
+
+const NAKES_ID = 'user_nakes_01';
+
+export const mockFollowUps: FollowUp[] = [
+  {
+    id: 'fu_01',
+    screeningId: 'scr_01',
+    motherId: 'mother_01',
+    healthcareWorkerId: NAKES_ID,
+    action: 'Pemantauan tekanan darah mandiri',
+    notes: 'Ibu diminta memantau tekanan darah harian dan kontrol ulang 1 minggu.',
+    referral: false,
+    status: 'SELESAI',
+    createdAt: '2026-09-05T14:10:00.000Z',
+    completedAt: '2026-09-08T09:00:00.000Z',
+  },
+  {
+    id: 'fu_06',
+    screeningId: 'scr_06',
+    motherId: 'mother_06',
+    healthcareWorkerId: NAKES_ID,
+    action: 'Evaluasi lanjutan HELLP suspect',
+    notes: 'Dijadwalkan pemeriksaan laboratorium lanjutan dalam 24-48 jam.',
+    referral: true,
+    referralFacility: 'RSUD Kota Bandung',
+    status: 'AKTIF',
+    createdAt: '2026-09-08T16:10:00.000Z',
+    completedAt: null,
+  },
+  {
+    id: 'fu_08',
+    screeningId: 'scr_08',
+    motherId: 'mother_08',
+    healthcareWorkerId: NAKES_ID,
+    action: 'Edukasi tanda bahaya dan kontrol rutin',
+    notes: 'Gejala membaik pada kunjungan ulang, dilanjutkan pemantauan rutin.',
+    referral: false,
+    status: 'SELESAI',
+    createdAt: '2026-09-02T14:15:00.000Z',
+    completedAt: '2026-09-05T10:00:00.000Z',
+  },
+  {
+    id: 'fu_09',
+    screeningId: 'scr_09',
+    motherId: 'mother_09',
+    healthcareWorkerId: NAKES_ID,
+    action: 'Rujukan kegawatdaruratan persalinan prematur',
+    notes: 'Ibu dirujuk ke fasilitas kesehatan untuk evaluasi dan tata laksana lanjutan.',
+    referral: true,
+    referralFacility: 'RSUD Kota Bandung',
+    status: 'AKTIF',
+    createdAt: '2026-09-09T07:20:00.000Z',
+    completedAt: null,
+  },
+];
