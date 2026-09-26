@@ -9,7 +9,7 @@
  * so this is the ONLY place you need to change it.
  * ============================================================
  */
-export const SITE_URL = "https://www.esigra.health";
+export const SITE_URL = "https://www.esigrahealth.com";
 
 export const SITE_NAME = "e-SIGRA";
 
