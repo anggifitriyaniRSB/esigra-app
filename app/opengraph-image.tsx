@@ -1,6 +1,8 @@
 import { ImageResponse } from "next/og";
 import { BRAND_MARK_DATA_URI } from "@/lib/brand-mark";
 
+export const runtime = "edge";
+export const dynamic = "force-dynamic";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt = "e-SIGRA — From Risk to Action.";
