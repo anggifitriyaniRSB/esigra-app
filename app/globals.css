@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F7F3E9;
+  color: #22241F;
+}
+
+/* Scroll-reveal (used by components/Reveal.tsx) */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.reveal.in-view {
+  animation: fadeUp 0.7s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Signal-line drawing for the hero/workflow diagrams */
+.signal-line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.signal-line.drawn {
+  animation: drawLine 1.4s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .signal-line.drawn {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Visible focus states for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #1F3B2E;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* On dark section backgrounds the default dark-green outline has
+   insufficient contrast against a similarly dark background — swap to
+   a light outline so focus stays visible everywhere on the page. */
+.bg-forest-deep a:focus-visible,
+.bg-forest-deep button:focus-visible,
+.bg-forest a:focus-visible,
+.bg-forest button:focus-visible,
+.bg-charcoal a:focus-visible,
+.bg-charcoal button:focus-visible {
+  outline-color: #F7F3E9;
+}
+
+::selection {
+  background-color: #C6E24B;
+  color: #22241F;
+}
